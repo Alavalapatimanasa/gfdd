@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="Calculator">
+        <input type="text" id="result" readonly>
+        <div class="buttons">
+            <button onclick="deleteResult()">Del</button>
+            <button onclick="clearResult()">c</button>
+            <button onclick="appendToResult('9')">9</button>
+            <button onclick="appendToResult('8')">8</button>
+            <button onclick="appendToResult('7')">7</button>
+            <button onclick="appendToResult('6')">6</button>
+            <button onclick="appendToResult('5')">5</button>
+            <button onclick="appendToResult('4')">4</button>
+            <button onclick="appendToResult('3')">3</button>
+            <button onclick="appendToResult('2')">2</button>
+            <button onclick="appendToResult('1')">1</button>
+            <button onclick="appendToResult('0')">0</button>
+            <button onclick="appendToResult('/')">/</button>
+            <button onclick="appendToResult('+')">+</button>
+            <button onclick="appendToResult('-')">-</button>
+            <button onclick="appendToResult('')"></button>
+            <button onclick="appendToResult('.')">.</button>
+            <button onclick="calculateResult()">=</button>
+        </div>
+    </div>
+    <style>
+        .Calculator{
+            width: 200px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: blue;
+
+        }
+        #result{
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 18px;
+        }
+        .buttons button{
+            width: 48px;
+            height: 48px;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        function appendToResult(value){
+            document.getElementById("result").value+=value;
+
+        }
+        function clearResult(){
+            document.getElementById("result").value=" ";
+                }
+                function calculateResult(){
+                    let result=document.getElementById("result").value;
+                    let finalresult=eval(result);
+                document.getElementById("result").value=finalresult;
+            }
+            function deleteResult()
+             {
+                let backspace=document.getElementById("result").value;
+                document.getElementById("result").value=backspace.slice(0,-1);
+                        }                
+    </script>
+</body>
+</html>
